@@ -53,8 +53,8 @@ function windowResized() {
 }
 
 function startMusic() {
-  if (!musicWANO.isPlaying()) {
-    musicWANO.play();
+  if (!WANOMusic.isPlaying()) {
+    WANOMusic.play();
   }
 }
 
