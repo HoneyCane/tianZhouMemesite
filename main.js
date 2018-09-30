@@ -1,6 +1,5 @@
 // Canvas metadata
 var canvas;
-var bgColor;
 
 // text elements
 var greeting;
@@ -11,10 +10,14 @@ var ellipseSlider;
 var inp;
 
 // Audio data
-var musicWANO;
+var WANOMusic;
+
+// visual images
+var WANOPhoto;
 
 function preload() {
-  musicWANO = loadSound("assets/WANO-FULL-INSTRUMENTAL.mp3");
+  WANOMusic = loadSound("assets/WANO-FULL-INSTRUMENTAL.mp3");
+  WANOPhoto = loadImage("assets/We_Are_Number_One.jpg");
 }
 
 function setup() {
@@ -22,26 +25,26 @@ function setup() {
   canvas.position(0,0);
   canvas.style("z-index", "-1");
 
-  bgColor = 25;
-  background(bgColor);
-
   homePage();
 }
 
 function homePage() {
+  background(WANOPhoto);
+
   greeting = createElement('h1', 'Abandon all hope ye who enter here');
 
-  colorButton = createButton("Change color");
-  colorButton.mouseClicked(randomColor);
+  colorButton = createButton("Enter anyways");
+  colorButton.mouseClicked(startMusic);
 
   ellipseSlider = createSlider(0, 255, 100);
 
-  inp = createInput('');
-  inp.input(inputEvent);
+  // inp = createInput('');
+  // inp.input(inputEvent);
 }
 
 function draw() {
   var val = ellipseSlider.value();
+  fill(map(val, 0 , 255));
   ellipse(width/2, height/2, val, val);
 }
 
@@ -49,10 +52,12 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-function randomColor() {
-  bgColor = random(0, 255);
+function startMusic() {
+  if (!musicWANO.isPlaying()) {
+    musicWANO.play();
+  }
 }
 
-function inputEvent() {
-  username.html(this.value());
-}
+// function inputEvent() {
+//   username.html(this.value());
+// }
