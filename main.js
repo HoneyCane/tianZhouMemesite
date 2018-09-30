@@ -10,19 +10,26 @@ var colorButton;
 var ellipseSlider;
 var inp;
 
+// Audio data
+var musicWANO;
+
+function preload() {
+  musicWANO = loadSound("assets/WANO-FULL-INSTRUMENTAL.mp3");
+}
+
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0,0);
   canvas.style("z-index", "-1");
 
   bgColor = 25;
+  background(bgColor);
 
   homePage();
 }
 
 function homePage() {
   greeting = createElement('h1', 'Abandon all hope ye who enter here');
-  greeting.position(CENTER);
 
   colorButton = createButton("Change color");
   colorButton.mouseClicked(randomColor);
@@ -34,8 +41,6 @@ function homePage() {
 }
 
 function draw() {
-  background(bgColor);
-
   var val = ellipseSlider.value();
   ellipse(width/2, height/2, val, val);
 }
