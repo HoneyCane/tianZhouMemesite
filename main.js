@@ -109,14 +109,31 @@ function lust() {
   memeButton.hide();
 
   opt1Button.html("This is a christian server! Next!");
-  // opt1Button.mouseReleased(lust); // TODO: add gluttony
+  opt1Button.mouseReleased(gluttony);
+
+  opt2Button.hide();
+}
+
+// -----------------------------------------------------------------------------
+// the third circle of hell
+function gluttony() {
+  background(125); // TODO: find gluttony background
+
+  greeting.html("Willkommen zu Gluttony");
+  exposition.html("Memes which include not only overindulgence in food and drink, but also other kinds of addiction");
+
+  // memeButton.html(""); // TODO: add interactivity to gluttony
+  memeButton.hide();
+
+  opt1Button.html("DLC not included");
+  // opt1Button.mouseReleased(lust); // TODO: add greed
 
   opt2Button.hide();
 }
 
 // -----------------------------------------------------------------------------
 function draw() {
-  
+
 }
 
 function windowResized() {
