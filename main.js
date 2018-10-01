@@ -103,21 +103,20 @@ function lust() {
   background(guyLookingBackPhoto);
 
   greeting.html("Bienvenido a Lust");
-  // exposition.html("");
+  exposition.html("As the lovers drifted into self-indulgence and were carried sway by their passions, so now they drift for ever. The bright, voluptuous sin is now seen as it is – a howling darkness of helpless discomfort");
 
-  // memeButton.html("");
-  // memeButton.show();
+  // memeButton.html(""); // TODO: add interactivity to lust
+  memeButton.hide();
 
   opt1Button.html("This is a christian server! Next!");
-  // opt1Button.mouseReleased(lust);
+  // opt1Button.mouseReleased(lust); // TODO: add gluttony
 
   opt2Button.hide();
 }
 
+// -----------------------------------------------------------------------------
 function draw() {
-  // var val = ellipseSlider.value();
-  // fill(map(val, 0 , 255));
-  // ellipse(width/2, height/2, val, val);
+  
 }
 
 function windowResized() {
