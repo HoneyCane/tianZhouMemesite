@@ -126,14 +126,24 @@ function gluttony() {
   memeButton.hide();
 
   opt1Button.html("DLC not included");
-  // opt1Button.mouseReleased(lust); // TODO: add greed
+  opt1Button.mouseReleased(mySpin); // TODO: add greed
 
   opt2Button.hide();
 }
 
+var spinbutt1 = false;
+var spinAmount = 0;
+
+function mySpin() {
+  spinbutt1 = true;
+}
+
 // -----------------------------------------------------------------------------
 function draw() {
-
+  if (spinbutt1 == true) {
+    opt1Button.style("rotate", spinAmount);
+    spinAmount += 5;
+  }
 }
 
 function windowResized() {
