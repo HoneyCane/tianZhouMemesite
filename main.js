@@ -143,6 +143,7 @@ function draw() {
   if (spinbutt1 == true) {
     opt1Button.style("rotate", spinAmount);
     spinAmount += 5;
+    opt1Button.position(mouseX, mouseY);
   }
 }
 
